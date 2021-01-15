@@ -1,5 +1,7 @@
 package com.wyvencraft.api.menus;
 
+import java.util.List;
+
 public class Menu {
     private final String id;
     private final String title;

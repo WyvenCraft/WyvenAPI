@@ -1,7 +1,6 @@
 package com.wyvencraft.api.managers;
 
 import com.wyvencraft.api.utils.Replacer;
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public interface LangManager {
