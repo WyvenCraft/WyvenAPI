@@ -12,9 +12,9 @@ import java.util.jar.JarFile;
 
 public interface IAddonHandler {
 
-    List<IAddon> getAddons();
+    List<? extends IAddon> getAddons();
 
-    Map<IAddon, List<Listener>> getAddonListenerMap();
+    Map<? extends IAddon, List<Listener>> getAddonListenerMap();
 
     void loadAddons();
 
