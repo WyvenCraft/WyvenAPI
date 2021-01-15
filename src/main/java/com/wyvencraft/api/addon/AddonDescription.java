@@ -2,7 +2,7 @@ package com.wyvencraft.api.addon;
 
 import java.util.List;
 
-public interface IAddonDescription {
+public interface AddonDescription {
     String getName();
 
     String getFullName();

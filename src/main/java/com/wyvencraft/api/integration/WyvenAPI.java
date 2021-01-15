@@ -1,6 +1,6 @@
 package com.wyvencraft.api.integration;
 
-import com.wyvencraft.api.addon.IAddonHandler;
+import com.wyvencraft.api.addon.AddonHandler;
 import com.wyvencraft.api.configuration.ConfigSettings;
 import com.wyvencraft.api.configuration.IFileManager;
 import com.wyvencraft.api.database.IDatabase;
@@ -35,7 +35,7 @@ public class WyvenAPI implements WyvenIntegrator {
     }
 
     @Override
-    public IAddonHandler getAddonHandler() {
+    public AddonHandler getAddonHandler() {
         return null;
     }
 

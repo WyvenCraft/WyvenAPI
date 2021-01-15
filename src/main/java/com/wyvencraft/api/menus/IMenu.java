@@ -4,15 +4,33 @@ import java.util.List;
 
 public interface IMenu {
 
-    public String getTitle();
+    /*
+     * Get menu title
+     */
+    String getTitle();
 
-    public int getRows();
+    /*
+     * Get rows amount
+     */
+    int getRows();
 
-    public String getId();
+    /*
+     * Get menu id
+     */
+    String getId();
 
-    public String getParent();
+    /*
+     * Get parent menu name
+     */
+    String getParent();
 
-    public List<IMenuItem> getContents();
+    /*
+     * Get menu contents
+     */
+    List<IMenuItem> getContents();
 
-    public List<CustomItem> getCustomItems();
+    /*
+     * NOT USED, might remove!
+     */
+    List<CustomItem> getCustomItems();
 }

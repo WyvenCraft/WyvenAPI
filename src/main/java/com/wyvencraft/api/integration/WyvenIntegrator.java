@@ -1,6 +1,6 @@
 package com.wyvencraft.api.integration;
 
-import com.wyvencraft.api.addon.IAddonHandler;
+import com.wyvencraft.api.addon.AddonHandler;
 import com.wyvencraft.api.configuration.ConfigSettings;
 import com.wyvencraft.api.configuration.IFileManager;
 import com.wyvencraft.api.database.IDatabase;
@@ -17,15 +17,9 @@ import java.util.UUID;
 public interface WyvenIntegrator {
     WyvenPlayer getPlayer(UUID uuid);
 
-    IDatabase getDatabase();
-
-    IFileManager getFileManager();
-
-    IAddonHandler getAddonHandler();
+    AddonHandler getAddonHandler();
 
     Plugin getPlugin();
-
-    ConfigSettings getSettings();
 
     SmartInventory getSmartInv();
 
