@@ -8,7 +8,7 @@ See the wiki: https://core.wyvencraft.com ()
 
 # Integration
 
-[![](https://jitpack.io/v/WyvenCraft/WyvenCore.svg)](https://jitpack.io/#WyvenCraft/WyvenCore)
+[![](https://jitpack.io/v/WyvenCraft/WyvenAPI.svg)](https://jitpack.io/#WyvenCraft/WyvenAPI)
 
 **_Include with Maven_**
 
