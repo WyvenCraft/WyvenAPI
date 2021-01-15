@@ -6,12 +6,17 @@ import com.wyvencraft.api.configuration.FileManager;
 import com.wyvencraft.api.database.Database;
 import com.wyvencraft.api.managers.LangManager;
 import com.wyvencraft.api.menus.Menus;
+import com.wyvencraft.api.player.WyvenPlayer;
 import io.github.portlek.smartinventory.SmartInventory;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.plugin.Plugin;
 
+import java.util.UUID;
+
 public interface WyvenAPI {
+    WyvenPlayer getPlayer(UUID uuid);
+
     Database getDatabase();
 
     FileManager getFileManager();
@@ -27,6 +32,8 @@ public interface WyvenAPI {
     Menus getMenus();
 
     LangManager getLangManager();
+
+    void disable();
 
     void registerCommand(final String commandName, final CommandExecutor executor, final TabCompleter tabCompleter, final String description, final String usage, final String... aliases);
 }

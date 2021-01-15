@@ -1,4 +1,6 @@
 package com.wyvencraft.api.addon;
 
-public interface AddonLanguage {
+import com.wyvencraft.api.managers.LangManager;
+
+public interface AddonLanguage extends LangManager {
 }
