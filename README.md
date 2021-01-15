@@ -22,8 +22,8 @@ See the wiki: https://core.wyvencraft.com ()
 
 <dependency>
     <groupId>com.github.WyvenCraft</groupId>
-	  <artifactId>WyvenAPI</artifactId>
-	  <version>VERSION</version>
+    <artifactId>WyvenAPI</artifactId>
+    <version>VERSION</version>
 </dependency>
 ```
 
