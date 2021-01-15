@@ -1,11 +1,11 @@
-package com.wyvencraft.api;
+package com.wyvencraft.api.integration;
 
-import com.wyvencraft.api.addon.AddonHandler;
+import com.wyvencraft.api.addon.IAddonHandler;
 import com.wyvencraft.api.configuration.ConfigSettings;
-import com.wyvencraft.api.configuration.FileManager;
-import com.wyvencraft.api.database.Database;
-import com.wyvencraft.api.managers.LangManager;
-import com.wyvencraft.api.menus.Menus;
+import com.wyvencraft.api.configuration.IFileManager;
+import com.wyvencraft.api.database.IDatabase;
+import com.wyvencraft.api.managers.ILangManager;
+import com.wyvencraft.api.menus.IMenus;
 import com.wyvencraft.api.player.WyvenPlayer;
 import io.github.portlek.smartinventory.SmartInventory;
 import org.bukkit.command.CommandExecutor;
@@ -14,14 +14,14 @@ import org.bukkit.plugin.Plugin;
 
 import java.util.UUID;
 
-public interface WyvenAPI {
+public interface WyvenIntegrator {
     WyvenPlayer getPlayer(UUID uuid);
 
-    Database getDatabase();
+    IDatabase getDatabase();
 
-    FileManager getFileManager();
+    IFileManager getFileManager();
 
-    AddonHandler getAddonHandler();
+    IAddonHandler getAddonHandler();
 
     Plugin getPlugin();
 
@@ -29,9 +29,9 @@ public interface WyvenAPI {
 
     SmartInventory getSmartInv();
 
-    Menus getMenus();
+    IMenus getMenus();
 
-    LangManager getLangManager();
+    ILangManager getLangManager();
 
     void disable();
 

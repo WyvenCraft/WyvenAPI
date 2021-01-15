@@ -10,11 +10,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.jar.JarFile;
 
-public interface AddonHandler {
+public interface IAddonHandler {
 
-    List<Addon> getAddons();
+    List<IAddon> getAddons();
 
-    Map<Addon, List<Listener>> getAddonListenerMap();
+    Map<IAddon, List<Listener>> getAddonListenerMap();
 
     void loadAddons();
 
@@ -24,27 +24,27 @@ public interface AddonHandler {
 
     void reloadAddonConfigs();
 
-    <E extends Addon> Object getAddonByName(final String name);
+    <E extends IAddon> Object getAddonByName(final String name);
 
-    List<Addon> getLoadedAddons();
+    List<IAddon> getLoadedAddons();
 
-    List<Addon> getEnabledAddons();
+    List<IAddon> getEnabledAddons();
 
-    List<Addon> getAllAddons();
+    List<IAddon> getAllAddons();
 
-    AddonClassLoader getClassLoader(final Addon addon);
+    IAddonClassLoader getClassLoader(final IAddon IAddon);
 
     Class<?> getClassByName(final String name);
 
     void setClass(final String name, final Class<?> clazz);
 
-    void registerListener(final Addon addon, final Listener listener);
+    void registerListener(final IAddon IAddon, final Listener listener);
 
     void loadAddon(final File file);
 
-    void enableAddon(final Addon addon);
+    void enableAddon(final IAddon IAddon);
 
-    void disableAddon(final Addon addon);
+    void disableAddon(final IAddon IAddon);
 
     YamlConfiguration getAddonDescription(final JarFile jarFile) throws IllegalStateException, IOException, InvalidConfigurationException;
 }

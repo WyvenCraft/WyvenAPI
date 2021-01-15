@@ -4,7 +4,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 
-public interface FileManager {
+public interface IFileManager {
 
     /**
      * Create a new config file from existing in resources.

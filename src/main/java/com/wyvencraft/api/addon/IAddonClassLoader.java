@@ -5,14 +5,14 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 import java.util.Set;
 
-public interface AddonClassLoader {
+public interface IAddonClassLoader {
     Class<?> findClass(final String name, final boolean checkGlobal);
 
-    Addon getAddon();
+    IAddon getAddon();
 
     Set<String> getClasses();
 
     void registerAddon(final YamlConfiguration description, final File path);
 
-    AddonDescription createDescription(final YamlConfiguration config) throws IllegalStateException;
+    IAddonDescription createDescription(final YamlConfiguration config) throws IllegalStateException;
 }

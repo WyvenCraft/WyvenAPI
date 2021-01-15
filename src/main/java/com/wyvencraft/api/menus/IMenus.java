@@ -5,13 +5,13 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.util.List;
 
-public interface Menus {
+public interface IMenus {
     void loadMenus();
 
-    Menu getMenu(String menuName);
+    IMenu getMenu(String menuName);
 
-    List<Menu> getMenus();
+    List<IMenu> getMenus();
 
-    MenuItem getMenuItem(YamlConfiguration file, ConfigurationSection section);
+    IMenuItem getMenuItem(YamlConfiguration file, ConfigurationSection section);
 
 }

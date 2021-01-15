@@ -5,16 +5,16 @@ import org.bukkit.configuration.file.FileConfiguration;
 import java.io.File;
 import java.io.InputStream;
 
-public interface Addon {
-    AddonLanguage getLanguage();
+public interface IAddon {
+    IAddonLanguage getLanguage();
 
     File getDataFolder();
 
-    Addon setDataFolder(File dataFolder);
+    IAddon setDataFolder(File dataFolder);
 
     File getFile();
 
-    Addon setFile(File file);
+    IAddon setFile(File file);
 
     FileConfiguration getConfig(final String fileName);
 
@@ -24,9 +24,9 @@ public interface Addon {
 
     void saveDefaultConfig(final String fileName);
 
-    void setDescription(final AddonDescription description);
+    void setDescription(final IAddonDescription description);
 
-    AddonDescription getDescription();
+    IAddonDescription getDescription();
 
     InputStream getResource(final String fileName);
 
