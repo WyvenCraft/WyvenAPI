@@ -31,12 +31,4 @@ public interface IAddon {
     InputStream getResource(final String fileName);
 
     void printHookInfo(final String pluginName);
-
-    void onLoad();
-
-    void onEnable();
-
-    void onDisable();
-
-    void reloadConfig();
 }

@@ -26,11 +26,11 @@ public interface IAddonHandler {
 
     <E extends IAddon> Object getAddonByName(final String name);
 
-    List<IAddon> getLoadedAddons();
+    List<? extends IAddon> getLoadedAddons();
 
-    List<IAddon> getEnabledAddons();
+    List<? extends IAddon> getEnabledAddons();
 
-    List<IAddon> getAllAddons();
+    List<? extends IAddon> getAllAddons();
 
     IAddonClassLoader getClassLoader(final IAddon IAddon);
 
