@@ -80,10 +80,11 @@
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.2.4</version>
                 <configuration>
+                    <minimizeJar>true</minimizeJar>
                     <artifactSet>
                         <excludes>
-                            <exclude>io.github.bananapuncher714:nbteditor</exclude>
-                            <exclude>io.github.portlek:bukkititembuilder</exclude>
+                            <exclude>io.github.bananapuncher714:*</exclude>
+                            <exclude>io.github.portlek:*</exclude>
                         </excludes>
                     </artifactSet>
                     <filters>
