@@ -22,7 +22,7 @@ public interface IMenus {
     /**
      * Get a list of all menus
      */
-    List<IMenu> getMenus();
+    List<? extends IMenu> getMenus();
 
     /**
      * Get a menuitem from a file.

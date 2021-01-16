@@ -30,13 +30,13 @@ public interface AddonHandler {
 
     void reloadAddonConfigs();
 
-    Addon getAddonByName(final String name);
+    <E extends Addon> Object getAddonByName(final String name);
 
-    Addon getLoadedAddons();
+    List<Addon> getLoadedAddons();
 
-    Addon getEnabledAddons();
+    List<Addon> getEnabledAddons();
 
-    Addon getAllAddons();
+    List<Addon> getAllAddons();
 
     <E extends AddonClassLoader> Object getClassLoader(final Addon IAddon);
 

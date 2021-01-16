@@ -6,12 +6,15 @@ import com.wyvencraft.api.menus.IMenus;
 import io.github.portlek.smartinventory.SmartInventory;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.TabCompleter;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
 
-import java.io.File;
+import java.util.logging.Logger;
 
 public interface WyvenAPI {
     Plugin getPlugin();
+
+    Logger getLogger();
 
     AddonHandler getAddonHandler();
 
@@ -27,7 +30,7 @@ public interface WyvenAPI {
 
     void reloadConfig(String configName);
 
-    File getConfig(String configName);
+    FileConfiguration getConfig(String configName);
 
     void registerCommand(final String commandName, final CommandExecutor executor, final TabCompleter tabCompleter, final String description, final String usage, final String... aliases);
 }

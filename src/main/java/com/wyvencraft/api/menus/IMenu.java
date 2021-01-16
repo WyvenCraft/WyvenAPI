@@ -27,10 +27,5 @@ public interface IMenu {
     /*
      * Get menu contents
      */
-    List<IMenuItem> getContents();
-
-    /*
-     * NOT USED, might remove!
-     */
-    List<CustomItem> getCustomItems();
+    List<? extends IMenuItem> getContents();
 }
