@@ -214,7 +214,7 @@ public abstract class Addon {
         }
     }
 
-    final void setDescription(final AddonDescription description) {
+    public final void setDescription(final AddonDescription description) {
         this.description = description;
     }
 
