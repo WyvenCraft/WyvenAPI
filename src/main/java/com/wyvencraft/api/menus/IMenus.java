@@ -7,24 +7,24 @@ import java.util.List;
 
 public interface IMenus {
 
-    /*
+    /**
      * Load all menus inside menus.yml
      */
     void loadMenus();
 
-    /*
+    /**
      * Get a menu
      *
      * @param menuName name of menu
      */
     IMenu getMenu(String menuName);
 
-    /*
+    /**
      * Get a list of all menus
      */
     List<IMenu> getMenus();
 
-    /*
+    /**
      * Get a menuitem from a file.
      *
      * @param file The config file

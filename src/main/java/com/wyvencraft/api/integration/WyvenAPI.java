@@ -1,76 +1,33 @@
 package com.wyvencraft.api.integration;
 
 import com.wyvencraft.api.addon.AddonHandler;
-import com.wyvencraft.api.configuration.ConfigSettings;
-import com.wyvencraft.api.configuration.IFileManager;
-import com.wyvencraft.api.database.IDatabase;
 import com.wyvencraft.api.managers.ILangManager;
 import com.wyvencraft.api.menus.IMenus;
-import com.wyvencraft.api.player.WyvenPlayer;
 import io.github.portlek.smartinventory.SmartInventory;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.plugin.Plugin;
 
-import java.util.UUID;
+import java.io.File;
 
-public class WyvenAPI implements WyvenIntegrator {
+public interface WyvenAPI {
+    Plugin getPlugin();
 
-    public WyvenAPI(Plugin plugin) {
-    }
+    AddonHandler getAddonHandler();
 
-    @Override
-    public WyvenPlayer getPlayer(UUID uuid) {
-        return null;
-    }
+    SmartInventory getSmartInv();
 
-    @Override
-    public IDatabase getDatabase() {
-        return null;
-    }
+    IMenus getMenus();
 
-    @Override
-    public IFileManager getFileManager() {
-        return null;
-    }
+    ILangManager getLangManager();
 
-    @Override
-    public AddonHandler getAddonHandler() {
-        return null;
-    }
+    void saveConfig(String configName);
 
-    @Override
-    public Plugin getPlugin() {
-        return null;
-    }
+    void saveDefaultConfig(String configName);
 
-    @Override
-    public ConfigSettings getSettings() {
-        return null;
-    }
+    void reloadConfig(String configName);
 
-    @Override
-    public SmartInventory getSmartInv() {
-        return null;
-    }
+    File getConfig(String configName);
 
-    @Override
-    public IMenus getMenus() {
-        return null;
-    }
-
-    @Override
-    public ILangManager getLangManager() {
-        return null;
-    }
-
-    @Override
-    public void disable() {
-
-    }
-
-    @Override
-    public void registerCommand(String commandName, CommandExecutor executor, TabCompleter tabCompleter, String description, String usage, String... aliases) {
-
-    }
+    void registerCommand(final String commandName, final CommandExecutor executor, final TabCompleter tabCompleter, final String description, final String usage, final String... aliases);
 }

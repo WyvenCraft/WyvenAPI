@@ -12,10 +12,16 @@ import java.util.jar.JarFile;
 
 public interface AddonHandler {
 
+    /**
+     * @return list of all installed addons
+     */
     List<Addon> getAddons();
 
     Map<Addon, List<Listener>> getAddonListenerMap();
 
+    /**
+     *
+     */
     void loadAddons();
 
     void enableAddons();

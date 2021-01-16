@@ -1,13 +1,9 @@
 package com.wyvencraft.api.addon;
 
 import com.wyvencraft.api.integration.WyvenAPI;
-import org.bukkit.Bukkit;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.plugin.Plugin;
-import org.bukkit.plugin.PluginDescriptionFile;
-import org.bukkit.plugin.PluginManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -40,19 +36,40 @@ public abstract class Addon {
         fileNameToConfigMap = new HashMap<>();
     }
 
+    /**
+     * Send or get messages from addon language file.
+     */
     public AddonLanguage getLanguage() {
         return language;
     }
 
+    /**
+     * ENABLED
+     * DISABLED
+     * LOADED
+     * UNLOADED
+     *
+     * @return current state of the addon
+     */
     public final State getState() {
         return state;
     }
 
+    /**
+     * Sets the current addon state
+     *
+     * @param state set addon state
+     */
     public final Addon setState(State state) {
         this.state = state;
         return this;
     }
 
+    /**
+     * Gets folder that contains addon configs.
+     *
+     * @return the datafolder
+     */
     public File getDataFolder() {
         return dataFolder;
     }
@@ -71,10 +88,22 @@ public abstract class Addon {
         return this;
     }
 
+    /**
+     * Gets wyvenapi, for accessing WyvenCore database, main languagemanager
+     * playermanager and more.
+     *
+     * @return access wyvenapi
+     */
     public final WyvenAPI getPlugin() {
         return plugin;
     }
 
+    /**
+     * get addon file with specific name. (remember '.yml')
+     *
+     * @param fileName name of addon file (remember '.yml')
+     * @return addon file
+     */
     public final FileConfiguration getConfig(final String fileName) {
         try {
             final File dataFolder = this.getDataFolder();
@@ -93,6 +122,11 @@ public abstract class Addon {
         }
     }
 
+    /**
+     * reloads addon file with specific name. (remember '.yml')
+     *
+     * @param fileName name of addon file (remember '.yml')
+     */
     public final void reloadConfig(final String fileName) {
         try {
             final File file = new File(this.getDataFolder(), fileName);
@@ -112,6 +146,11 @@ public abstract class Addon {
         }
     }
 
+    /**
+     * save addon file
+     *
+     * @param fileName name of addon file (remember '.yml')
+     */
     public final void saveConfig(final String fileName) {
         try {
             final File dataFolder = this.getDataFolder();
@@ -137,6 +176,11 @@ public abstract class Addon {
         }
     }
 
+    /**
+     * create file from default contents, make sure you have made the file!
+     *
+     * @param fileName name of addon file (remember '.yml')
+     */
     public final void saveDefaultConfig(final String fileName) {
         try {
             final File dataFolder = this.getDataFolder();
@@ -174,6 +218,9 @@ public abstract class Addon {
         this.description = description;
     }
 
+    /**
+     * @return addon description
+     */
     public final AddonDescription getDescription() {
         return description;
     }
@@ -197,26 +244,41 @@ public abstract class Addon {
         }
     }
 
-    public final void printHookInfo(final String pluginName) {
-        final PluginManager manager = Bukkit.getPluginManager();
-        if (!manager.isPluginEnabled(pluginName)) return;
+//    public final void printHookInfo(final String pluginName) {
+//        final PluginManager manager = Bukkit.getPluginManager();
+//        if (!manager.isPluginEnabled(pluginName)) return;
+//
+//        final Plugin plugin = manager.getPlugin(pluginName);
+//        if (plugin == null) return;
+//
+//        final PluginDescriptionFile description = plugin.getDescription();
+//        final String fullName = description.getFullName();
+//        plugin.getLogger().info("Successfully hooked into plugin '" + fullName + "'.");
+//    }
 
-        final Plugin plugin = manager.getPlugin(pluginName);
-        if (plugin == null) return;
-
-        final PluginDescriptionFile description = plugin.getDescription();
-        final String fullName = description.getFullName();
-        plugin.getLogger().info("Successfully hooked into plugin '" + fullName + "'.");
-    }
-
+    /**
+     * Dont touch! or use at own risk
+     */
     public abstract void onLoad();
 
+    /**
+     * Dont touch! or use at own risk
+     */
     public abstract void onEnable();
 
+    /**
+     * Dont touch! or use at own risk
+     */
     public abstract void onDisable();
 
+    /**
+     * Dont touch! or use at own risk
+     */
     public abstract void reloadConfig();
 
+    /**
+     * Addon states
+     */
     public enum State {
         ENABLED,
         DISABLED,

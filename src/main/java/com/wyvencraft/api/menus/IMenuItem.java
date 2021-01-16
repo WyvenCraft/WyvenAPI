@@ -10,15 +10,44 @@ public interface IMenuItem {
         BACK, NEXT_PAGE, PREV_PAGE, CLOSE, PLACEHOLDER;
     }
 
-    public boolean isFill();
+    /**
+     *
+     * @return true if this item should fill inventory
+     */
+    boolean isFill();
 
-    public ItemStackBuilder getStack();
+    /**
+     *
+     * @return menu item as itembuilder
+     */
+    ItemStackBuilder getStack();
 
-    public List<String> getActions();
+    /**
+     *
+     * @return list of actions to be done when clicked
+     */
+    List<String> getActions();
 
-    public SlotPos getSlot();
+    /**
+     *
+     * @return the slot position inside menu.
+     */
+    SlotPos getSlot();
 
-    public List<SlotPos> getSlots();
+    /**
+     *
+     * @return list of slot positions
+     */
+    List<SlotPos> getSlots();
 
-    public Type getType();
+    /**
+     * BACK - opens parent page if available
+     * NEXT_PAGE - opens next page if is pagination and have multiple
+     * PREVIOUS_PAGE - opens previous page if is pagination and have multiple
+     * CLOSE - closes the menu
+     * PLACEHOLDER - default type
+     *
+     * @return type of menu item
+     */
+    Type getType();
 }
