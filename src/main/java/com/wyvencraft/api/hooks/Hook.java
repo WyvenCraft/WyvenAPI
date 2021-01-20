@@ -7,14 +7,14 @@ import java.util.HashMap;
 
 public abstract class Hook {
     private WyvenAPI plugin;
+    public static final HashMap<String, Hook> hooks = new HashMap<>();
 
     private final String name;
     private boolean enabled = false;
 
-    public static final HashMap<String, Hook> hooks = new HashMap<>();
-
     public Hook(String name) {
         this.name = name;
+        hooks.put(name, this);
     }
 
     public boolean isEnabled() {
@@ -29,7 +29,7 @@ public abstract class Hook {
         if (Bukkit.getPluginManager().isPluginEnabled(this.name)) {
             this.enabled = true;
             runHookAction();
-            plugin.getLogger().info("Successfully hooked into " + this.name);
+            System.out.println("Successfully hooked into " + this.name);
         }
     }
 

@@ -1,6 +1,7 @@
 package com.wyvencraft.api.integration;
 
 import com.wyvencraft.api.addon.AddonHandler;
+import com.wyvencraft.api.hooks.Hook;
 import com.wyvencraft.api.managers.ILangManager;
 import com.wyvencraft.api.menus.IMenus;
 import org.bukkit.command.CommandExecutor;
