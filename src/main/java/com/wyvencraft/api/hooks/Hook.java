@@ -1,12 +1,10 @@
 package com.wyvencraft.api.hooks;
 
-import com.wyvencraft.api.integration.WyvenAPI;
 import org.bukkit.Bukkit;
 
 import java.util.HashMap;
 
 public abstract class Hook {
-    private WyvenAPI plugin;
     public static final HashMap<String, Hook> hooks = new HashMap<>();
 
     private final String name;
