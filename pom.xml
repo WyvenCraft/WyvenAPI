@@ -89,7 +89,7 @@
                     <minimizeJar>true</minimizeJar>
                     <artifactSet>
                         <excludes>
-                            <exclude>com.cryptomorin.xseries:*</exclude>
+                            <exclude>com.github.cryptomorin:*</exclude>
                             <exclude>io.github.bananapuncher714:*</exclude>
                             <exclude>io.github.portlek:*</exclude>
                         </excludes>
