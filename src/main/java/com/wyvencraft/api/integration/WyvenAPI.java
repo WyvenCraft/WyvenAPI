@@ -12,6 +12,7 @@ import org.bukkit.plugin.Plugin;
 import java.util.logging.Logger;
 
 public interface WyvenAPI {
+
     Plugin getPlugin();
 
     Logger getLogger();
