@@ -1,17 +1,17 @@
 package com.wyvencraft.api.commands;
 
-import com.wyvencraft.api.integration.WyvenAPI;
+import com.wyvencraft.api.addon.Addon;
 import com.wyvencraft.api.managers.ILangManager;
 import org.bukkit.command.CommandSender;
 
 public abstract class SubCommand {
-    private final WyvenAPI plugin;
+    private final Addon addon;
     private final String name;
     private final String permission;
     private final int minArgs;
 
-    public SubCommand(WyvenAPI plugin, String name, String permission, int minArgs) {
-        this.plugin = plugin;
+    public SubCommand(Addon addon, String name, String permission, int minArgs) {
+        this.addon = addon;
         this.name = name;
         this.permission = permission;
         this.minArgs = minArgs;
@@ -21,7 +21,7 @@ public abstract class SubCommand {
         if (hasPermission(s)) {
             handleCommand(s, args);
         } else {
-            ILangManager lang = plugin.getLangManager();
+            ILangManager lang = addon.getPlugin().getLangManager();
             lang.sendMessage(s, lang.getMessageColored("NO_PERMISSION"));
         }
     }
