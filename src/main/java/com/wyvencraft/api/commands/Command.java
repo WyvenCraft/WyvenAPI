@@ -18,8 +18,9 @@ public abstract class Command implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull org.bukkit.command.Command cmd, @NotNull String label, @NotNull String[] args) {
+        // If there are no arguments send help list by default
         if (args.length == 0) {
-            SubCommand helpCmd = subCommands.get(1);
+            SubCommand helpCmd = subCommands.get(0);
             helpCmd.command(sender, new String[0]);
             return true;
         }
@@ -38,15 +39,17 @@ public abstract class Command implements CommandExecutor {
             return true;
         }
 
-        SubCommand helpCmd = subCommands.get(1);
-        helpCmd.command(sender, new String[0]);
+//        SubCommand helpCmd = subCommands.get(0);
+//        helpCmd.command(sender, new String[0]);
 
         return false;
     }
 
+    // args = ["give", "yeet", "gustav"]
+
     public String[] getSubArgs(SubCommand subCmd, String[] args) {
-        String[] subArgs = new String[subCmd.getMinArgs()];
-        if (subArgs.length >= 0) System.arraycopy(args, 1, subArgs, 0, subArgs.length);
+        String[] subArgs = new String[args.length - 1];
+        System.arraycopy(args, 1, subArgs, 0, subArgs.length);
         return subArgs;
     }
 }

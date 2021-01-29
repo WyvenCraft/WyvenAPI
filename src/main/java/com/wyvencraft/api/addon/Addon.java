@@ -22,7 +22,7 @@ import java.util.logging.Level;
 public abstract class Addon {
 
     private AddonDescription description;
-    private final AddonLanguage language;
+    //    private final AddonLanguage language;
     private State state;
     private final WyvenAPI plugin;
     private File dataFolder;
@@ -32,16 +32,16 @@ public abstract class Addon {
     public Addon(WyvenAPI plugin) {
         this.plugin = plugin;
         this.state = State.UNLOADED;
-        this.language = new AddonLanguage(this);
+//        this.language = new AddonLanguage(this);
         fileNameToConfigMap = new HashMap<>();
     }
 
-    /**
-     * Send or get messages from addon language file.
-     */
-    public AddonLanguage getLanguage() {
-        return language;
-    }
+//    /**
+//     * Send or get messages from addon language file.
+//     */
+//    public AddonLanguage getLanguage() {
+//        return language;
+//    }
 
     /**
      * ENABLED
