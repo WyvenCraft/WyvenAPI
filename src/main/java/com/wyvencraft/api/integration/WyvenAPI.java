@@ -3,6 +3,7 @@ package com.wyvencraft.api.integration;
 import com.wyvencraft.api.addon.AddonHandler;
 import com.wyvencraft.api.managers.ILangManager;
 import com.wyvencraft.api.menus.IMenus;
+import io.github.portlek.smartinventory.SmartInventory;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -21,6 +22,8 @@ public interface WyvenAPI {
     IMenus getMenus();
 
     ILangManager getLangManager();
+
+    SmartInventory getSmartInventory();
 
     void saveConfig(String configName);
 

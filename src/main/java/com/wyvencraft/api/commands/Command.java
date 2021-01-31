@@ -10,7 +10,7 @@ import java.util.Optional;
 
 public abstract class Command implements CommandExecutor {
 
-    private final List<SubCommand> subCommands;
+    public final List<SubCommand> subCommands;
 
     public Command(SubCommand... subCommands) {
         this.subCommands = Arrays.asList(subCommands);
