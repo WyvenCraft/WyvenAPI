@@ -8,7 +8,7 @@ See the wiki: https://core.wyvencraft.com ()
 
 # Integration
 
-[![](https://jitpack.io/v/WyvenCraft/WyvenAPI.svg)](https://jitpack.io/#WyvenCraft/WyvenAPI) [1[](https://discord.com/api/webhooks/805839779006251030/4o3QQm22tZQqLcQNLqRHh68tDXIrerS83_qXIr-aGMsAHNQ0ohyRcC_SuAWKlDRp1m6W)]()
+[![](https://jitpack.io/v/WyvenCraft/WyvenAPI.svg)](https://jitpack.io/#WyvenCraft/WyvenAPI) [![](https://discord.com/api/webhooks/805839779006251030/4o3QQm22tZQqLcQNLqRHh68tDXIrerS83_qXIr-aGMsAHNQ0ohyRcC_SuAWKlDRp1m6W)]()
 
 **_Include with Maven_**
 
