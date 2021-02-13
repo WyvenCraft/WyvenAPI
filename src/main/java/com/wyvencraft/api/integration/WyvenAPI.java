@@ -1,5 +1,6 @@
 package com.wyvencraft.api.integration;
 
+import com.wyvencraft.api.Database;
 import com.wyvencraft.api.addon.AddonHandler;
 import com.wyvencraft.api.managers.ILangManager;
 import com.wyvencraft.api.menus.IMenus;
@@ -24,6 +25,8 @@ public interface WyvenAPI {
     ILangManager getLangManager();
 
     SmartInventory getSmartInventory();
+
+    Database getDatabase();
 
     void saveConfig(String configName);
 
