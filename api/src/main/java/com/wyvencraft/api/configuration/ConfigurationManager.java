@@ -1,11 +1,9 @@
-package com.wyvencraft.api.managers;
+package com.wyvencraft.api.configuration;
 
-import com.wyvencraft.api.addon.Addon;
-import com.wyvencraft.api.integration.IWyvenCore;
 import org.apache.commons.lang.Validate;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.plugin.Plugin;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,18 +20,18 @@ import java.util.logging.Logger;
 
 public final class ConfigurationManager {
 
-    private final Plugin resource;
+    private final IResource resource;
     private final File baseFolder;
     private final Map<String, YamlConfiguration> configFiles;
 
-    public ConfigurationManager(Addon addon) {
-        this(addon.getPlugin());
+    public ConfigurationManager(IResource resource) {
+        this.baseFolder = resource.getDataFolder();
+        this.configFiles = new HashMap<>();
+        this.resource = resource;
     }
 
-    public ConfigurationManager(IWyvenCore plugin) {
-        this.baseFolder = plugin.getPlugin().getDataFolder();
-        this.configFiles = new HashMap<>();
-        this.resource = plugin.getPlugin();
+    public ConfigurationManager(JavaPlugin plugin) {
+        this(new WrapperResourcePlugin(plugin));
     }
 
     /**
@@ -53,6 +51,16 @@ public final class ConfigurationManager {
         } catch (IOException | InvalidConfigurationException ex) {
             return null;
         }
+    }
+
+    /**
+     * Copies the default configuration from the jar if it does not already exist.
+     *
+     * @param fileName The relative name of the configuration to copy
+     */
+    public void saveDefault(String fileName) {
+        File file = getFile(fileName);
+        saveDefault(fileName, file);
     }
 
     /**
@@ -121,37 +129,36 @@ public final class ConfigurationManager {
         return new File(baseFolder, fileName);
     }
 
-    public void saveDefault(String fileName) {
+    private void saveDefault(String fileName, File realFile) {
         Validate.notEmpty(fileName, "jarName cannot be null or empty!");
+        Validate.notNull(realFile, "realFile cannot be null!");
+        if (realFile.exists()) return;
 
-        File file = getFile(fileName);
-        if (file.exists()) return;
-
-        InputStream jarStream = this.resource.getResource(fileName);
+        InputStream jarStream = resource.getResource(fileName);
         if (jarStream == null) {
-            Logger logger = this.resource.getLogger();
+            Logger logger = resource.getLogger();
             logger.warning("Failed to save default config '" + fileName + "' because it does not exist in the jar.");
             return;
         }
 
         try {
-            File parentFile = file.getParentFile();
+            File parentFile = realFile.getParentFile();
             if (parentFile != null && !parentFile.exists() && !parentFile.mkdirs()) {
-                Logger logger = this.resource.getLogger();
+                Logger logger = resource.getLogger();
                 logger.warning("Failed to save default config '" + fileName + "' because the parent folder could not be created.");
                 return;
             }
 
-            if (!file.createNewFile()) {
-                Logger logger = this.resource.getLogger();
+            if (!realFile.createNewFile()) {
+                Logger logger = resource.getLogger();
                 logger.warning("Failed to save default config '" + fileName + "' because the file could not be created.");
                 return;
             }
 
-            Path absolutePath = file.toPath();
+            Path absolutePath = realFile.toPath();
             Files.copy(jarStream, absolutePath, StandardCopyOption.REPLACE_EXISTING);
         } catch (IOException ex) {
-            Logger logger = this.resource.getLogger();
+            Logger logger = resource.getLogger();
             logger.log(Level.WARNING, "An I/O exception occurred while saving a default file:", ex);
         }
     }

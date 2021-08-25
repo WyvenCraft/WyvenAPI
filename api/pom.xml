@@ -27,5 +27,26 @@
             <version>${jar.version}</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.wyvencraft.api</groupId>
+            <artifactId>smartinventory</artifactId>
+            <version>1.0.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.portlek</groupId>
+            <artifactId>BukkitItemBuilder</artifactId>
+            <version>5.5.4</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jdbi</groupId>
+            <artifactId>jdbi3-core</artifactId>
+            <version>3.21.0</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 </project>

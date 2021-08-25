@@ -1,7 +1,7 @@
 package com.wyvencraft.api.addon;
 
 import com.wyvencraft.api.listeners.WyvenListener;
-import com.wyvencraft.api.managers.ConfigurationManager;
+import com.wyvencraft.api.configuration.ConfigurationManager;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.util.Objects;

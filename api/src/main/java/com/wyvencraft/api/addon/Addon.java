@@ -1,7 +1,8 @@
 package com.wyvencraft.api.addon;
 
+import com.wyvencraft.api.configuration.IResource;
 import com.wyvencraft.api.integration.IWyvenCore;
-import com.wyvencraft.api.managers.ConfigurationManager;
+import com.wyvencraft.api.configuration.ConfigurationManager;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
@@ -22,7 +23,7 @@ import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public abstract class Addon {
+public abstract class Addon implements IResource {
     public enum State {
         LOADED, UNLOADED, ENABLED, DISABLED
     }

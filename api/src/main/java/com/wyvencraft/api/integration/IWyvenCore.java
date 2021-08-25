@@ -2,11 +2,11 @@ package com.wyvencraft.api.integration;
 
 import com.wyvencraft.api.Database;
 import com.wyvencraft.api.addon.AddonManager;
-import com.wyvencraft.api.managers.ConfigurationManager;
-import com.wyvencraft.api.managers.LanguageManager;
+import com.wyvencraft.api.configuration.ConfigurationManager;
+import com.wyvencraft.api.language.LanguageManager;
 import com.wyvencraft.api.menus.IMenus;
 import com.wyvencraft.api.utils.Replacer;
-import io.github.portlek.smartinventory.SmartInventory;
+import com.wyvencraft.smartinventory.SmartInventory;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

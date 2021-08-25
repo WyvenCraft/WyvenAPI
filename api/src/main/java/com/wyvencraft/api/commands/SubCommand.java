@@ -1,6 +1,6 @@
 package com.wyvencraft.api.commands;
 
-import com.wyvencraft.api.managers.LanguageManager;
+import com.wyvencraft.api.language.LanguageManager;
 import com.wyvencraft.api.utils.Replacer;
 import com.wyvencraft.api.integration.IWyvenCore;
 import org.bukkit.command.CommandSender;

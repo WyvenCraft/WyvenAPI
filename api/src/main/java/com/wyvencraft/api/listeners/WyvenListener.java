@@ -1,8 +1,8 @@
 package com.wyvencraft.api.listeners;
 
 import com.wyvencraft.api.integration.IWyvenCore;
-import com.wyvencraft.api.managers.ConfigurationManager;
-import com.wyvencraft.api.managers.LanguageManager;
+import com.wyvencraft.api.configuration.ConfigurationManager;
+import com.wyvencraft.api.language.LanguageManager;
 import com.wyvencraft.api.utils.Replacer;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;

@@ -1,5 +1,6 @@
-package com.wyvencraft.api.managers;
+package com.wyvencraft.api.language;
 
+import com.wyvencraft.api.configuration.ConfigurationManager;
 import com.wyvencraft.api.utils.Replacer;
 import com.wyvencraft.api.utils.Text;
 import org.bukkit.command.CommandSender;
