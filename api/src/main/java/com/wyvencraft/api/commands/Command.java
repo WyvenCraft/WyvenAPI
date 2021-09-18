@@ -2,6 +2,7 @@ package com.wyvencraft.api.commands;
 
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,7 +17,7 @@ public abstract class Command implements CommandExecutor {
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, org.bukkit.command.Command cmd, String label, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, org.bukkit.command.@NotNull Command cmd, @NotNull String label, String[] args) {
         // If there are no arguments send help list by default
         if (args.length == 0) {
             SubCommand helpCmd = subCommands.get(0);
@@ -31,22 +32,13 @@ public abstract class Command implements CommandExecutor {
             return false;
         }).findFirst();
 
-        if (optionalSubCommand.isPresent()) {
-            SubCommand sub = optionalSubCommand.get();
-
-            sub.command(sender, getSubArgs(sub, args));
-            return true;
-        }
-
-//        SubCommand helpCmd = subCommands.get(0);
-//        helpCmd.command(sender, new String[0]);
-
-        return false;
+        optionalSubCommand.ifPresent(sub -> sub.command(sender, getSubArgs(args)));
+        return true;
     }
 
-    // args = ["give", "yeet", "gustav"]
-
-    public String[] getSubArgs(SubCommand subCmd, String[] args) {
+    // args = ["give", "yeet", "craft"]
+    // removes the subcommand from the args array
+    public String[] getSubArgs(String[] args) {
         String[] subArgs = new String[args.length - 1];
         System.arraycopy(args, 1, subArgs, 0, subArgs.length);
         return subArgs;

@@ -4,6 +4,22 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <packaging>jar</packaging>
+
+    <parent>
+        <artifactId>parent</artifactId>
+        <groupId>com.wyvencraft.api</groupId>
+        <version>1.0.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>smartinventory</artifactId>
+    <name>SmartInventory</name>
+    <description>Adds the smartinventory to be use within projects</description>
+    <properties>
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>io.papermc.paper</groupId>
@@ -23,18 +39,5 @@
         <!--            <version>2.3.3</version>-->
         <!--        </dependency>-->
     </dependencies>
-    <parent>
-        <artifactId>parent</artifactId>
-        <groupId>com.wyvencraft.api</groupId>
-        <version>1.0.0</version>
-        <relativePath>../pom.xml</relativePath>
-    </parent>
 
-    <artifactId>smartinventory</artifactId>
-    <name>SmartInventory</name>
-    <description>Adds the smartinventory to be use within projects</description>
-    <properties>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
-    </properties>
 </project>

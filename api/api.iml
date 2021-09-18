@@ -48,7 +48,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.ow2.asm:asm-tree:9.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.ow2.asm:asm-analysis:9.1" level="project" />
     <orderEntry type="module" module-name="smartinventory" />
-    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.20" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.portlek:BukkitItemBuilder:5.5.4" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.portlek:bukkit-version:2.2.15" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.portlek:transformer:1.5.13" level="project" />
