@@ -14,7 +14,7 @@
 
     <properties>
         <java.version>16</java.version>
-        <jar.version>1.17.1-R0.1-SNAPSHOT</jar.version>
+        <jar.version>1.20.4-R0.1-SNAPSHOT</jar.version>
         <wyvencore.version>1.0.0-${build.number}</wyvencore.version>
         <build.number>local</build.number>
 
@@ -32,14 +32,14 @@
 
     <modules>
         <module>api</module>
-        <module>smartinventory</module>
+        <!--        <module>smartinventory</module>-->
         <!--        <module>bukkititembuilder</module>-->
     </modules>
 
     <repositories>
         <repository>
             <id>papermc</id>
-            <url>https://papermc.io/repo/repository/maven-public/</url>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
 
         <repository>

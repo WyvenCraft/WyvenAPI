@@ -4,9 +4,7 @@ import com.wyvencraft.api.Database;
 import com.wyvencraft.api.addon.AddonManager;
 import com.wyvencraft.api.configuration.ConfigurationManager;
 import com.wyvencraft.api.language.LanguageManager;
-import com.wyvencraft.api.menus.IMenus;
 import com.wyvencraft.api.utils.Replacer;
-import com.wyvencraft.smartinventory.SmartInventory;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -23,11 +21,7 @@ public interface IWyvenCore {
 
     AddonManager getAddonManager();
 
-    IMenus getMenus();
-
     LanguageManager getLanguageManager();
-
-    SmartInventory getSmartInventory();
 
     Database getDatabase();
 

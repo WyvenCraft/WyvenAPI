@@ -29,19 +29,6 @@
         </dependency>
 
         <dependency>
-            <groupId>com.wyvencraft.api</groupId>
-            <artifactId>smartinventory</artifactId>
-            <version>1.0.0</version>
-            <scope>compile</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>*</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
             <groupId>com.github.portlek</groupId>
             <artifactId>BukkitItemBuilder</artifactId>
             <version>5.5.4</version>
@@ -51,7 +38,7 @@
         <dependency>
             <groupId>org.jdbi</groupId>
             <artifactId>jdbi3-core</artifactId>
-            <version>3.21.0</version>
+            <version>3.43.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

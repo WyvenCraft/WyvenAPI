@@ -6,16 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="smartinventory" />
-        <module name="api" />
+        <module name="WyvenAPI" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="api" target="16" />
       <module name="bukkititembuilder" target="16" />
-      <module name="parent" target="16" />
       <module name="smartinventory" target="16" />
-      <module name="WyvenAPI" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

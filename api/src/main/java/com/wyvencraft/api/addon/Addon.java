@@ -3,7 +3,7 @@ package com.wyvencraft.api.addon;
 import com.wyvencraft.api.configuration.IResource;
 import com.wyvencraft.api.integration.IWyvenCore;
 import com.wyvencraft.api.configuration.ConfigurationManager;
-import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
