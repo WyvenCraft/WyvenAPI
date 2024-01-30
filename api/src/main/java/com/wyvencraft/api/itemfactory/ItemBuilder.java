@@ -2,8 +2,11 @@ package com.wyvencraft.api.itemfactory;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
@@ -43,29 +46,6 @@ public class ItemBuilder {
         return this;
     }
 
-    public ItemBuilder setLore(String lore) {
-        itemStack.editMeta(meta -> {
-            List<TextComponent> components = Arrays.stream(lore.split("\n"))
-                    .map(Component::text)
-                    .toList();
-            meta.lore(components);
-        });
-        return this;
-    }
-
-    public ItemBuilder setLore(String lore, String... loreArray) {
-        itemStack.editMeta(meta -> {
-            List<TextComponent> components = new ArrayList<>(Arrays.stream(lore.split("\n"))
-                    .map(Component::text)
-                    .toList());
-            for (String s : loreArray) {
-                components.add(Component.text(s));
-            }
-            meta.lore(components);
-        });
-        return this;
-    }
-
     public ItemBuilder addEnchantment(Enchantment enchantment, int level) {
         itemStack.editMeta(meta -> meta.addEnchant(enchantment, level, true));
         return this;
@@ -89,5 +69,22 @@ public class ItemBuilder {
     public ItemBuilder setModelData(int modelData) {
         itemStack.editMeta(meta -> meta.setCustomModelData(modelData));
         return this;
+    }
+
+    public ItemBuilder setFlags(ItemFlag... flags) {
+        itemStack.editMeta(meta -> meta.addItemFlags(flags));
+        return this;
+    }
+
+    public ItemBuilder setSkullOwner(String owner) {
+        itemStack.editMeta(meta -> {
+            OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(owner);
+            ((SkullMeta) meta).setOwningPlayer(offlinePlayer);
+        });
+        return this;
+    }
+
+    public ItemStack build() {
+        return itemStack;
     }
 }
